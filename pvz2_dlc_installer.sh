@@ -6,7 +6,6 @@ xdg-open "https://gamejolt.com/games/pvzdlceditionmod/1009738"
 read -p "PRess enter to continue"
 pvz2_dlc_zip=$(kdialog --title "Select zip file for PVZ2 DLC Edition" --getopenfilename . 'application/zip' 2>/dev/null)
 pvz2_dlc_folder=$(kdialog --title "Select folder to install PVZ2 DLC Edition (should be empty)" --getexistingdirectory . 2>/dev/null)
-#steamapps=$(find ~ ! -readable -prune -o -name 'steamapps'  -print  | grep -v compatdata | grep -v "Trash" | grep -v 'drive_[a-z]')
 libraryfolders=$(find ~ ! -readable -prune -o -name 'libraryfolders.vdf'  -print | grep -v 'compatdata' | grep -v 'Trash' | grep -v 'drive_[a-z]' | grep config)
 echo "Found libraryfolders.vdf at $libraryfolders"
 libraries=$(cat $libraryfolders | grep path | xargs -n 2 | cut -d ' ' -f2)
